@@ -6,6 +6,9 @@ import { heroIcons } from "../Constants";
 import { ScrollParallax } from "react-just-parallax";
 import { useRef } from "react";
 import Generating from "./Generating";
+import Notification from "./Notification";
+import CompanyLogos from "./CompanyLogos";
+
 const Hero = () => {
   const parallaxRef = useRef(null);
   return (
@@ -52,7 +55,8 @@ const Hero = () => {
                   height={490}
                   alt="AI"
                 />
-            <Generating className="absolute left-4 right-4 bottom-5 md:left-1/2 md:right-auto md:bottom-8 md:w-[31rem] md:-translate-x-1/2"/>
+
+                <Generating className="absolute left-4 right-4 bottom-5 md:left-1/2 md:right-auto md:bottom-8 md:w-[31rem] md:-translate-x-1/2" />
 
                 <ScrollParallax isAbsolutelyPositioned>
                   <ul className="hidden absolute -left-[5.5rem] bottom-[7.5rem] px-1 py-1 bg-n-9/40 backdrop-blur border border-n-1/20 rounded-2xl xl:flex">
@@ -63,10 +67,16 @@ const Hero = () => {
                     ))}
                   </ul>
                 </ScrollParallax>
+
+                <ScrollParallax isAbsolutelyPositioned>
+                  <Notification
+                    className="hidden absolute -right-[5.5rem] bottom-[11rem] w-[18rem] xl:flex"
+                    title="Code generation"
+                  />
+                </ScrollParallax>
               </div>
             </div>
-           <Gradient/>
-
+            <Gradient />
           </div>
           <div className="absolute -top-[54%] left-1/2 w-[234%] -translate-x-1/2 md:-top-[46%] md:w-[138%] lg:top-[-104%]">
             <img
@@ -77,10 +87,13 @@ const Hero = () => {
               alt="hero"
             />
           </div>
-          <BackgroundCircles/>
+          <BackgroundCircles />
         </div>
+
+    <CompanyLogos className="hidden relative z-10 mt-20 lg:block"/>
+
       </div>
-      <BottomLine/>
+      <BottomLine />
     </Section>
   );
 };
