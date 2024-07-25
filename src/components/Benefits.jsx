@@ -39,7 +39,7 @@ const Benefits = () => {
                   <Arrow />
                 </div>
               </div>
-
+p[]
               {item.light && <GradientLight />}
 
               <div
